@@ -1,0 +1,174 @@
+//Important Global Variables
+const VERSION = 'v0.4.1-BETA';
+
+const GAMEBOXX = 25;
+const GAMEBOXY = 25;
+const GAMEBOXW = 550;
+const GAMEBOXH = 550;
+
+let state    = 'START';
+let platform = 'PC';
+
+let mouseIsClicked = false;
+
+let currentDir = 'NONE';
+let mobileRun  = false;
+
+let enemySprite;
+let enemyName;
+let enemyBG;
+let enemyMusic;
+let currentBattle;
+
+let currentBattleJSON  = 0;
+let currentBattleDif   = 0;
+let currentAttackIndex = 0;
+let currentAttackLoop  = 0;
+let currentAttackFrame = 0;
+
+//Dialog
+let activeDialog = false;
+let currentDialogLine = 0;
+let currentDialog;
+let currentDialogProfile;
+let currentDialogName;
+let isDialogEndBattle = false;
+
+//Settings
+let cheaterMode = false;
+
+//Moding
+let modData = [];
+let modDatabaseIndexFile;
+let modDatabaseURL = 'https://raw.githubusercontent.com/RavenGirlLuca/totpwdatabase/main';
+let modDatabaseCovers = [];
+
+//Define Images
+let downloadIcon;
+let felosBulletBlank;
+let felosBulletRed;
+let felosBulletOrange;
+let felosBulletYellow;
+let felosBulletGreen;
+let felosBulletBlue;
+let felosBulletPurple;
+let acciaioBullet;
+let bomb;
+let bombShrap;
+let playerTopNormal;
+let playerBottomNormal;
+let playerSkirtNormal;
+let greenGuyTop;
+let greenGuyBottom;
+let greenGuyUFO;
+let acciaioSprite;
+let mainMenuBg0;
+let arrowUp;
+let arrowDown;
+let arrowLeft;
+let arrowRight;
+let arrowUpRight;
+let arrowDownLeft;
+let arrowUpLeft;
+let arrowDownRight;
+let spiralClockwise;
+let spiralCounterClockwise;
+
+async function loadImages() {
+  //Load Images
+  downloadIcon       = await loadImage('/src/assets/download.png');
+  felosBulletBlank   = await loadImage('/src/assets/bullet.png');
+  felosBulletRed     = await loadImage('/src/assets/bulletred.png');
+  felosBulletOrange  = await loadImage('/src/assets/bulletorange.png');
+  felosBulletYellow  = await loadImage('/src/assets/bulletyellow.png');
+  felosBulletGreen   = await loadImage('/src/assets/bulletgreen.png');
+  felosBulletBlue    = await loadImage('/src/assets/bulletblue.png');
+  felosBulletPurple  = await loadImage('/src/assets/bulletpurple.png');
+  acciaioBullet      = await loadImage('/src/assets/acciaioBullet.png');
+  bomb               = await loadImage('/src/assets/bomb.png');
+  bombShrap          = await loadImage('/src/assets/bombShrap.png');
+  playerTopNormal    = await loadImage('/src/assets/playertop.png');
+  playerBottomNormal = await loadImage('/src/assets/playerbottom.png');
+  playerSkirtNormal  = await loadImage('/src/assets/playerskirt.png');
+  greenGuyTop        = await loadImage('/src/assets/greenguytop.png');
+  greenGuyBottom     = await loadImage('/src/assets/greenguybottom.png');
+  greenGuyUFO        = await loadImage('/src/assets/greenguyufo.png');
+  acciaioSprite      = await loadImage('/src/assets/acciaio.png');
+  mainMenuBg0        = await loadImage('/src/assets/felosBG.png');
+  arrowUp            = await loadImage('/src/assets/arrowup.png');
+  arrowDown          = await loadImage('/src/assets/arrowdown.png');
+  arrowLeft          = await loadImage('/src/assets/arrowleft.png');
+  arrowRight         = await loadImage('/src/assets/arrowright.png');
+  arrowUpRight       = await loadImage('/src/assets/arrowupright.png');
+  arrowDownLeft      = await loadImage('/src/assets/arrowdownleft.png');
+  arrowUpLeft        = await loadImage('/src/assets/arrowupleft.png');
+  arrowDownRight     = await loadImage('/src/assets/arrowdownright.png');
+  spiralClockwise    = await loadImage('/src/assets/spiralclockwise.png');
+  spiralCounterClockwise = await loadImage('/src/assets/spiralcounterclockwise.png');
+}
+
+//Define GIFs
+let felosSprite;
+
+async function loadGIFs() {
+  //Load GIFs
+  felosSprite = await loadImage('/src/assets/felos.gif');
+}
+
+//Define Audios
+let felosMusic;
+let menuMusic;
+let gameoverSFX;
+
+async function loadAudio() {
+  //Load Audio
+  felosMusic   = await loadSound('/src/assets/PRISMATIC-WITCH-I.ogg');
+  acciaioMusic = await loadSound('/src/assets/ACCIAIO.ogg');
+  menuMusic    = await loadSound('/src/assets/MENU-I.ogg');
+  gameoverSFX  = await loadSound('/src/assets/GAMEOVER-I.ogg');
+
+  felosMusic.loop(true);
+  menuMusic.loop(true);
+}
+
+//Define Fonts
+let C64Font;
+
+async function loadFonts() {
+  //Load Fonts
+  font = await loadFont('/src/assets/fonts/C64_Pro-STYLE.otf');
+
+  textFont(font);
+}
+
+//Define JSONs
+let bossFirstJSON;
+let bossFinalJSON;
+
+async function loadJSONs() {
+  //Load JSONs
+  bossFirstJSON = await loadJSON('/src/battles/bossFirst.json');
+  bossFinalJSON = await loadJSON('/src/battles/bossFinal.json');
+}
+
+async function loadObjects() {
+  fileInput = createFileInput(loadMod, true);
+  fileInput.position(((windowWidth - width)/2) + (100*WINDOWMULTIPLIER), ((windowHeight - height)/2) + (200*WINDOWMULTIPLIER));
+  fileInput.size(600*WINDOWMULTIPLIER,80*WINDOWMULTIPLIER)
+  fileInput.style('opacity', '0'); 
+  fileInput.hide();
+}
+
+async function loadDatabase() {
+  modDatabaseIndexFile = await loadJSON(modDatabaseURL + "/index.json");
+
+  for (let i = 0; i < modDatabaseIndexFile.length; i++) {
+    modDatabaseCovers.push(
+      await loadImage(
+        modDatabaseURL + modDatabaseIndexFile[i].coverURL
+      )
+    )
+  }
+
+  console.log(modDatabaseCovers)
+}
