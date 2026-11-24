@@ -989,7 +989,7 @@ function databaseMenu() {
       100*WINDOWMULTIPLIER,
     )
 
-    if (modDatabaseIndexFile[i]) {
+    if (modDatabaseIndexFile[i + (currentDatabasePage*5)]) {
       image(modDatabaseCovers[i + (currentDatabasePage*5)],1*WINDOWMULTIPLIER,((100*(i+1))-49)*WINDOWMULTIPLIER,98*WINDOWMULTIPLIER,98*WINDOWMULTIPLIER)
 
       push();
@@ -1032,5 +1032,46 @@ function databaseMenu() {
       )
     }
     fill(0,0,0);
+  }
+
+  if (currentDatabasePage >= 1) {
+    if (
+      mouseY < (50*WINDOWMULTIPLIER)) {
+      fill(80,80,80);
+      if (mouseIsClicked) {
+        mouseIsClicked = false;
+        currentDatabasePage--;
+      }
+    }
+    else {
+      fill(0,0,0);
+    } 
+    
+    rect(
+      0,
+      0,
+      width,
+      50*WINDOWMULTIPLIER,
+    )
+  }
+
+  if (modDatabaseIndexFile[5*(currentDatabasePage+1)]) {
+    if (mouseY > (550*WINDOWMULTIPLIER)) {
+      fill(80,80,80);
+      if (mouseIsClicked) {
+        mouseIsClicked = false;
+        currentDatabasePage++;
+      }
+    }
+    else {
+      fill(0,0,0);
+    } 
+
+    rect(
+      0,
+      550*WINDOWMULTIPLIER,
+      width,
+      50*WINDOWMULTIPLIER,
+    )
   }
 }

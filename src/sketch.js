@@ -8,7 +8,6 @@
 async function setup() {
   let { w, h } = calculateCanvasSize();
   createCanvas(w, h);
-
   noSmooth();
 
   await loadImages();
