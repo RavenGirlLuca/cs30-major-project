@@ -90,13 +90,13 @@ function drawStatMenu() {
         mouseX < mobileButtonUpX*WINDOWMULTIPLIER + mobileButtonW*WINDOWMULTIPLIER && 
         mouseY > mobileButtonUpY*WINDOWMULTIPLIER && 
         mouseY < mobileButtonUpY*WINDOWMULTIPLIER + mobileButtonH*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsPressed) {
         currentDir = 'UP';
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     } 
 
     rect(mobileButtonUpX*WINDOWMULTIPLIER,mobileButtonUpY*WINDOWMULTIPLIER,mobileButtonW*WINDOWMULTIPLIER,mobileButtonH*WINDOWMULTIPLIER);
@@ -105,13 +105,13 @@ function drawStatMenu() {
         mouseX < mobileButtonDownX*WINDOWMULTIPLIER + mobileButtonW*WINDOWMULTIPLIER && 
         mouseY > mobileButtonDownY*WINDOWMULTIPLIER && 
         mouseY < mobileButtonDownY*WINDOWMULTIPLIER + mobileButtonH*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsPressed) {
         currentDir = 'DOWN';
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     } 
 
     rect(mobileButtonDownX*WINDOWMULTIPLIER,mobileButtonDownY*WINDOWMULTIPLIER,mobileButtonW*WINDOWMULTIPLIER,mobileButtonH*WINDOWMULTIPLIER);
@@ -120,13 +120,13 @@ function drawStatMenu() {
         mouseX < mobileButtonLeftX*WINDOWMULTIPLIER + mobileButtonW*WINDOWMULTIPLIER && 
         mouseY > mobileButtonLeftY*WINDOWMULTIPLIER && 
         mouseY < mobileButtonLeftY*WINDOWMULTIPLIER + mobileButtonH*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsPressed) {
         currentDir = 'LEFT';
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     } 
 
     rect(mobileButtonLeftX*WINDOWMULTIPLIER,mobileButtonLeftY*WINDOWMULTIPLIER,mobileButtonW*WINDOWMULTIPLIER,mobileButtonH*WINDOWMULTIPLIER);
@@ -135,13 +135,13 @@ function drawStatMenu() {
         mouseX < mobileButtonRightX*WINDOWMULTIPLIER + mobileButtonW*WINDOWMULTIPLIER && 
         mouseY > mobileButtonRightY*WINDOWMULTIPLIER && 
         mouseY < mobileButtonRightY*WINDOWMULTIPLIER + mobileButtonH*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsPressed) {
         currentDir = 'RIGHT';
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     } 
 
     rect(mobileButtonRightX*WINDOWMULTIPLIER,mobileButtonRightY*WINDOWMULTIPLIER,mobileButtonW*WINDOWMULTIPLIER,mobileButtonH*WINDOWMULTIPLIER);
@@ -150,13 +150,13 @@ function drawStatMenu() {
         mouseX < mobileButtonRunX*WINDOWMULTIPLIER + mobileButtonW*WINDOWMULTIPLIER && 
         mouseY > mobileButtonRunY*WINDOWMULTIPLIER && 
         mouseY < mobileButtonRunY*WINDOWMULTIPLIER + mobileButtonH*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsClicked) {
         mobileRun = !mobileRun;
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     } 
 
     rect(mobileButtonRunX*WINDOWMULTIPLIER,mobileButtonRunY*WINDOWMULTIPLIER,mobileButtonW*WINDOWMULTIPLIER,mobileButtonH*WINDOWMULTIPLIER);
@@ -191,7 +191,7 @@ let buttonH = 60;
 
 function mainMenu() {
   //Draws main menu, allows you to choose from 3 dificulties and shows the title
-  image(mainMenuBg0, 0,0, GAMEWIDTH*WINDOWMULTIPLIER, GAMEHEIGHT*WINDOWMULTIPLIER);
+  //image(mainMenuBg0, 0,0, GAMEWIDTH*WINDOWMULTIPLIER, GAMEHEIGHT*WINDOWMULTIPLIER); UNCOMMENT TO READD MENU BG
 
   textAlign(CENTER);
 
@@ -213,53 +213,53 @@ function mainMenu() {
   rect(buttonX*WINDOWMULTIPLIER,buttonY*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > (buttonY+80)*WINDOWMULTIPLIER && mouseY < (buttonY+80)*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(85,160,73);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
       state = 'BONUSMENU';
     }
   }
   else {
-    fill(148,224,137);
+    fill(120,105,196);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,(buttonY+80)*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > (buttonY+160)*WINDOWMULTIPLIER && mouseY < (buttonY+160)*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(136,57,50);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
       state = 'OPTIONSMENU';
     }
   }
   else {
-    fill(184,105,98);
+    fill(120,105,196);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,(buttonY+160)*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > (buttonY+240)*WINDOWMULTIPLIER && mouseY < (buttonY+240)*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
       saveData();
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,(buttonY+240)*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > (buttonY+320)*WINDOWMULTIPLIER && mouseY < (buttonY+320)*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
       window.location.href = '../';
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,(buttonY+320)*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
@@ -301,7 +301,7 @@ function deadMenu() {
 
   //Try Again Button
   if (mouseX > retryButtonX*WINDOWMULTIPLIER && mouseX < retryButtonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > retryButtonY*WINDOWMULTIPLIER && mouseY < retryButtonY*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(136,57,50);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
       player.reset();
@@ -317,7 +317,7 @@ function deadMenu() {
     }
   }
   else {
-    fill(184,105,98);
+    fill(120,105,196);
   } 
 
   stroke('WHITE');
@@ -366,13 +366,18 @@ function diffMenu() {
   image(imageLookupTable[jsonArray[currentJSONIndex].coverSprite],width/2,height/2.5,256*WINDOWMULTIPLIER,256*WINDOWMULTIPLIER);
   text(jsonArray[currentJSONIndex].coverName,width/2,height/6)
 
+  stroke("WHITE");
+  strokeWeight(4*WINDOWMULTIPLIER);
+
   rect(width/2,3*height/4,170*WINDOWMULTIPLIER,64*WINDOWMULTIPLIER)
+
+  textSize(32*WINDOWMULTIPLIER);
 
   if (mouseX > (width/2) - (128*WINDOWMULTIPLIER) && 
     mouseX < ((width/2) - (128*WINDOWMULTIPLIER)) + 256*WINDOWMULTIPLIER && 
     mouseY > (height/2.5) - (128*WINDOWMULTIPLIER) && 
     mouseY < ((height/2.5) - (128*WINDOWMULTIPLIER)) + 256*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       currentBattleDif = currentDif;
       currentDif = 0;
@@ -392,7 +397,7 @@ function diffMenu() {
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   }  
 
   if (jsonArray[currentJSONIndex - 1]) {
@@ -400,14 +405,14 @@ function diffMenu() {
       mouseX < ((width/2) - (243*WINDOWMULTIPLIER)) + 86*WINDOWMULTIPLIER && 
       mouseY > (height/2.5) - (64*WINDOWMULTIPLIER) && 
       mouseY < ((height/2.5) - (64*WINDOWMULTIPLIER)) + 128*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsClicked) {
         currentJSONIndex--;
         currentDif = 0;
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     } 
 
     rect((width/2) - (200*WINDOWMULTIPLIER),height/2.5,86*WINDOWMULTIPLIER,128*WINDOWMULTIPLIER)
@@ -418,14 +423,14 @@ function diffMenu() {
       mouseX < ((width/2) + (175*WINDOWMULTIPLIER)) + 86*WINDOWMULTIPLIER && 
       mouseY > (height/2.5) - (64*WINDOWMULTIPLIER) && 
       mouseY < ((height/2.5) - (64*WINDOWMULTIPLIER)) + 128*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsClicked) {
         currentJSONIndex++;
         currentDif = 0;
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     } 
 
     rect((width/2) + (200*WINDOWMULTIPLIER),height/2.5,86*WINDOWMULTIPLIER,128*WINDOWMULTIPLIER)
@@ -436,16 +441,18 @@ function diffMenu() {
       mouseX < ((width/2) - (182*WINDOWMULTIPLIER)) + 64*WINDOWMULTIPLIER && 
       mouseY > (3*height/4) - (32*WINDOWMULTIPLIER) && 
       mouseY < ((3*height/4) - (32*WINDOWMULTIPLIER)) + 64*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsClicked) {
         currentDif--;
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     } 
 
-    rect((width/2) - (150*WINDOWMULTIPLIER),3*height/4,64*WINDOWMULTIPLIER,64*WINDOWMULTIPLIER)
+    rect((width/2) - (150*WINDOWMULTIPLIER),3*height/4,64*WINDOWMULTIPLIER,64*WINDOWMULTIPLIER);
+    fill('white');
+    text('-',(width/2) - (148*WINDOWMULTIPLIER),(3*height/4) + (12*WINDOWMULTIPLIER));
   }
 
   if (currentDif < jsonArray[currentJSONIndex].difs.length) {
@@ -453,16 +460,18 @@ function diffMenu() {
       mouseX < ((width/2) + (118*WINDOWMULTIPLIER)) + 64*WINDOWMULTIPLIER && 
       mouseY > (3*height/4) - (32*WINDOWMULTIPLIER) && 
       mouseY < ((3*height/4) - (32*WINDOWMULTIPLIER)) + 64*WINDOWMULTIPLIER) {
-      fill(80,80,80);
+      fill(64,49,141);
       if (mouseIsClicked) {
         currentDif++;
       }
     }
     else {
-      fill(159,159,159);
+      fill(120,105,196);
     }  
 
-    rect((width/2) + (150*WINDOWMULTIPLIER),3*height/4,64*WINDOWMULTIPLIER,64*WINDOWMULTIPLIER)
+    rect((width/2) + (150*WINDOWMULTIPLIER),3*height/4,64*WINDOWMULTIPLIER,64*WINDOWMULTIPLIER);
+    fill('white');
+    text('+',(width/2) + (152*WINDOWMULTIPLIER),(3*height/4) + (12*WINDOWMULTIPLIER));
   }
 
   pop();
@@ -492,14 +501,14 @@ function settingsMenu() {
     mouseX < settingsButtonX*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+0)*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+0)*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       storeItem('dataExists', false);
       state = 'DATAINPUT';
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect(settingsButtonX*WINDOWMULTIPLIER,(settingsButtonY+0)*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -508,7 +517,7 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (settingsButtonW + 20))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+0)*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+0)*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       player.easyScr = 0;
       player.normScr = 0;
@@ -524,7 +533,7 @@ function settingsMenu() {
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (settingsButtonW + 20))*WINDOWMULTIPLIER,(settingsButtonY+0)*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -533,14 +542,14 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+0)*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+0)*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       currentInputName = '';
       state = 'NAMEINPUT';
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER,(settingsButtonY+0)*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -551,13 +560,13 @@ function settingsMenu() {
     mouseX < settingsButtonX*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       cheaterMode = !cheaterMode;
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect(settingsButtonX*WINDOWMULTIPLIER,(settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -566,13 +575,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (settingsButtonW + 20))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (settingsButtonW + 20))*WINDOWMULTIPLIER,(settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -581,13 +590,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER,(settingsButtonY+(settingsButtonH + 20))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -598,13 +607,13 @@ function settingsMenu() {
     mouseX < settingsButtonX*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect(settingsButtonX*WINDOWMULTIPLIER,(settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -613,13 +622,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (settingsButtonW + 20))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (settingsButtonW + 20))*WINDOWMULTIPLIER,(settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -628,13 +637,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER,(settingsButtonY+(2*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -645,13 +654,13 @@ function settingsMenu() {
     mouseX < settingsButtonX*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect(settingsButtonX*WINDOWMULTIPLIER,(settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -660,13 +669,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (settingsButtonW + 20))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (settingsButtonW + 20))*WINDOWMULTIPLIER,(settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -675,13 +684,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER,(settingsButtonY+(3*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -692,13 +701,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX)*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX)*WINDOWMULTIPLIER,(settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -707,13 +716,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (1 * (settingsButtonW + 20)))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       state = 'MAINMENU';
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (1 * (settingsButtonW + 20)))*WINDOWMULTIPLIER,(settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -723,13 +732,13 @@ function settingsMenu() {
     mouseX < (settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER + settingsButtonW*WINDOWMULTIPLIER && 
     mouseY > (settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER && 
     mouseY < (settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER + settingsButtonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       
     }
   }
   else {
-    fill(159,159,159);
+    fill(120,105,196);
   } 
 
   rect((settingsButtonX + (2 * (settingsButtonW + 20)))*WINDOWMULTIPLIER,(settingsButtonY+(4*(settingsButtonH + 20)))*WINDOWMULTIPLIER,settingsButtonW*WINDOWMULTIPLIER,settingsButtonH*WINDOWMULTIPLIER);
@@ -834,31 +843,31 @@ function bonusMenu() {
   textSize(40*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > buttonY*WINDOWMULTIPLIER && mouseY < buttonY*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
     }
   }
   else {
-    fill(80,80,80);
+    fill(64,49,141);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,buttonY*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > (buttonY+80)*WINDOWMULTIPLIER && mouseY < (buttonY+80)*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
     }
   }
   else {
-    fill(80,80,80);
+    fill(64,49,141);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,(buttonY+80)*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > (buttonY+160)*WINDOWMULTIPLIER && mouseY < (buttonY+160)*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(136,57,50);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
       state = "MODMENU"
@@ -866,31 +875,31 @@ function bonusMenu() {
     }
   }
   else {
-    fill(184,105,98);
+    fill(120,105,196);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,(buttonY+160)*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > (buttonY+240)*WINDOWMULTIPLIER && mouseY < (buttonY+240)*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
     }
   }
   else {
-    fill(80,80,80);
+    fill(64,49,141);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,(buttonY+240)*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
 
   if (mouseX > buttonX*WINDOWMULTIPLIER && mouseX < buttonX*WINDOWMULTIPLIER + buttonW*WINDOWMULTIPLIER && mouseY > (buttonY+320)*WINDOWMULTIPLIER && mouseY < (buttonY+320)*WINDOWMULTIPLIER + buttonH*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
     }
   }
   else {
-    fill(80,80,80);
+    fill(64,49,141);
   } 
 
   rect(buttonX*WINDOWMULTIPLIER,(buttonY+320)*WINDOWMULTIPLIER,buttonW*WINDOWMULTIPLIER,buttonH*WINDOWMULTIPLIER);
@@ -936,13 +945,13 @@ function modMenu() {
     mouseX < 100*WINDOWMULTIPLIER + 600*WINDOWMULTIPLIER && 
     mouseY > 305*WINDOWMULTIPLIER && 
     mouseY < 305*WINDOWMULTIPLIER + 80*WINDOWMULTIPLIER) {
-    fill(80,80,80);
+    fill(64,49,141);
     if (mouseIsClicked) {
       mouseIsClicked = false;
     }
   }
   else {
-    fill(80,80,80);
+    fill(64,49,141);
   } 
 
   rect(100*WINDOWMULTIPLIER,305*WINDOWMULTIPLIER,600*WINDOWMULTIPLIER,80*WINDOWMULTIPLIER);
@@ -1006,7 +1015,7 @@ function databaseMenu() {
         mouseX < (width-(90*WINDOWMULTIPLIER)) + (80*WINDOWMULTIPLIER) && 
         mouseY > ((100*(i+1))-40)*WINDOWMULTIPLIER && 
         mouseY < (((100*(i+1))-40)*WINDOWMULTIPLIER) + (80*WINDOWMULTIPLIER)) {
-        fill(80,80,80);
+        fill(50,50,50);
         if (mouseIsClicked) {
           mouseIsClicked = false;
           fetchDatabaseMod(i + (currentDatabasePage*5));
@@ -1037,7 +1046,7 @@ function databaseMenu() {
   if (currentDatabasePage >= 1) {
     if (
       mouseY < (50*WINDOWMULTIPLIER)) {
-      fill(80,80,80);
+      fill(50,50,50);
       if (mouseIsClicked) {
         mouseIsClicked = false;
         currentDatabasePage--;
@@ -1057,7 +1066,7 @@ function databaseMenu() {
 
   if (modDatabaseIndexFile[5*(currentDatabasePage+1)]) {
     if (mouseY > (550*WINDOWMULTIPLIER)) {
-      fill(80,80,80);
+      fill(50,50,50);
       if (mouseIsClicked) {
         mouseIsClicked = false;
         currentDatabasePage++;
